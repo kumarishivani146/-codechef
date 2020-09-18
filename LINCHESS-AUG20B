@@ -1,0 +1,30 @@
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int t,n,k,a;
+    int min,res;
+    cin>>t;
+    while(t){
+            min=INT_MAX;
+            cin>>n>>k;
+            while(n){
+                    cin>>a;
+                    if(k%a==0){
+                        if(k/a<min)
+                        {
+                             min=k/a;
+                             res=a;
+                        }
+                    }
+                n--;
+            }
+            if(min!=INT_MAX)
+                cout<<res<<endl;
+            else
+               cout<<-1<<endl;
+        t--;
+    }
+return 0;
+}
