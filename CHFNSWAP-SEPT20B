@@ -1,0 +1,60 @@
+// Partially solved:- got 40 marks only.
+
+
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+
+long long C(int n, int r) {
+    if(n<r)
+        return 0;
+    if(r > n - r) r = n - r; // because C(n, r) == C(n, n - r)
+    long long ans = 1;
+    int i;
+    //cout<<n<<" "<<r<<endl;
+    for(i = 1; i <= r; i++) {
+        ans *= n - r + i;
+        ans /= i;
+    }
+
+    return ans;
+}
+
+
+
+int main(){
+    long long int n,t,i,count;
+    cin>>t;
+    long long int sum,sum1;
+    while(t--){
+        cin>>n;
+        sum=0;
+        sum1=0;
+        if(n%2==0)
+        sum=(n*((n+1)/2))+n/2;
+        else
+        sum=n*((n+1)/2);
+        if(sum%2!=0)
+            cout<<0<<endl;
+        else{
+            sum1=0;
+            sum/=2;
+            count=0;
+            for(i=n;sum1<sum;i--)
+            {
+                if(sum1==sum)
+                break;
+                sum1+=i;
+                count++;
+            }
+            if(sum1==sum)
+            {
+                cout<<C(count,2)+C(n-count,2)+count<<endl;
+            }
+            else
+            cout<<n-i<<endl;
+
+        }
+    }
+return 0;
+}
