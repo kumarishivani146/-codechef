@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t,n;
+    cin>>t;
+    for(int i=0;i<t;i++){
+        cin>>n;
+        cout<<"O";
+        int l=n-1;
+        int j=1,r=8;
+
+        while(j<=l){
+            if(j%8==0)
+                cout<<endl;
+            cout<<".";
+            j++;
+        }
+        j=64-j;
+        while(j){
+            if(j%8==0)
+                cout<<endl;
+            cout<<"X";
+            j--;
+        }
+        cout<<endl;
+    }
+	return 0;
+}
