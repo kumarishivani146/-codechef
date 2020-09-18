@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int t,a,b,counta,countb;
+    cin>>t;
+    while(t){
+            counta=countb=0;
+            cin>>a>>b;
+            if(a%9!=0)
+                counta+=(a/9)+1;
+            else
+                counta+=a/9;
+            if(b%9!=0)
+                countb+=(b/9)+1;
+            else
+                countb+=b/9;
+            if(countb==counta||countb<counta)
+                cout<<1<<" "<<countb<<endl;
+            else
+                cout<<0<<" "<<counta<<endl;
+
+            //cout<<counta<<" "<<countb<<endl;
+        t--;
+    }
+return 0;
+}
