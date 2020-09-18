@@ -1,0 +1,22 @@
+t=int(input())
+for i in range(t):
+	d1={}
+	d2={}
+	n=int(input())
+	for j in range(4*n-1):
+		x, y = map(int, input().split())
+		try:
+			d1[x]+=1
+		except:
+			d1[x]=1
+		try:
+			d2[y]+=1
+		except:
+			d2[y]=1
+	for i in d1:
+	    if d1[i]%2!=0:
+	        break
+	for j in d2:
+	    if d2[j]%2!=0:
+	        break
+	print(i,j)
